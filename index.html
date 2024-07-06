@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp UI</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media screen and (min-width:50px) and (max-width:360px) {
+            .rightcont{
+                display: none;
+            }
+            .rchat{
+                margin: 15px;
+                position:relative;
+                height: calc(100%-195px);
+                /* overflow-y: auto; */
+                background-color: #0a4263;
+                display: flex;
+                justify-content: start;
+                /* height:calc(100%-200ox);
+                overflow-y: scroll; */
+            }
+            .rscroll{
+                
+                overflow-y: scroll;
+                /* height:calc(90px); */
+                height: 100em;
+                
+                
+                /* background-color:  ; */
+                }
+            
+                .search{
+                position: relative;
+
+                width:100%;
+                
+                /* background: #f6f6f6; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+
+            }
+                .search div{
+                    width:100%;
+                    font-size: 80px;
+                    height: 250px;
+                }
+                .search div ion-icon[name="search" ]{
+                
+                position: absolute;
+                left:80%;
+                top:-10px;
+                } 
+
+                .ssd{
+                     width:90%; border-radius: 25px; font-size: 40px; 
+                    height: 20vh; margin:15px; 
+                    margin-top: 80px;
+                }
+                
+                
+
+            
+        }
+        @media screen and (min-width:360px) and (max-width:1024px) {
+            .rightcont{
+                display: none;
+            }
+            .leftcont{
+                width:100vw;
+                height: 100vh;
+            }
+            .rcheat{
+            position: sticky;
+            }
+                        .header{
+                position: relative;
+                width:100%;
+                height:70px;
+                background: #ededed;
+                display:flex;
+                justify-content: space-between;
+                align-items: hidden;
+                padding:5px 10px;
+                /* position: fixed; */
+                position: sticky;
+            }
+                        .img{
+                position: relative;
+                width: 50px;
+                height: 50px;
+                overflow: hidden;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            .img1{
+                width: 100%;;
+                height: 100%;
+                object-fit:cover;
+                position: absolute;
+                /* top:30px; */
+                left:0;
+                z-index: 4;
+            }
+            .icons{
+                display: flex;
+                /* justify-content:space-evenly; */
+                align-items: center;
+            }
+                        .icons li{
+                display:flex;
+                list-style: none;
+                cursor: pointer;
+                color:#51585c;
+                font-size: 1.5em;
+                margin-left: 0px;
+                justify-content: space-evenly;
+            
+            }
+            .search{
+                position: relative;
+
+                width:100%;
+                height:50px;
+                /* background: #f6f6f6; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+
+            }
+                .search div{
+                    width:100%;
+                    font-size: 25px;
+                }
+                .search div ion-icon[name="search" ]{
+                
+                position: absolute;
+                left:80%;
+                top:-10px;
+                }    
+                            .btnn{
+                margin-left: 1vw;
+                opacity: 0.8;
+                margin-bottom: 3px;
+                /* border-bottom: 1px solid rgba(233, 230, 230, 0.911); */
+                
+            }
+            .btnn button{
+                /* height:4vh;
+                width:5vw; */
+                height:50%;
+                margin-right: 10px;
+                font-size: 15px;
+                border: 0px solid black;
+                border-radius: 45%;
+                padding: 5px;
+                margin-bottom: 5px;
+            }
+            .btnn button:hover{
+                background-color: #d9dbd5;
+                padding: 5px;
+            }
+                .rscroll{
+                
+                overflow-y: scroll;
+                /* height:calc(90px); */
+                height: 80vh;
+                
+                
+                /* background-color:  ; */
+                }
+
+
+                        .rchat{
+                margin: 15px;
+                position:relative;
+                height: calc(100%-195px);
+                /* overflow-y: auto; */
+                background-color: #0a4263;
+                display: flex;
+                justify-content: start;
+                /* height:calc(100%-200ox);
+                overflow-y: scroll; */
+            }
+            
+                    .chtt{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            
+            /* border-bottom: 1px solid rgba(233, 230, 230, 0.911); */
+        }
+        .chtt1{
+            border-top: 1px solid rgba(233, 230, 230, 0.911);
+            
+        }
+                    .newtime{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            }
+            #h2k{
+                font-size: 18px; 
+                font-weight: lighter; 
+                margin-right: 150px; 
+                float: right;
+                color: black;
+            }
+            #h5k{
+                font-size: 10px; 
+                font-weight: lighter;
+                float: right;
+            }
+                        .msg{
+                font-size: 14px;
+            }
+                      
+                                }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="leftcont">
+            <div class="rcheat">
+            <div class="header">
+                <div class="img">
+                    <img src="./sai.png" alt=" user" class="img1" >
+                </div>
+                <ul class="icons">
+                    <li><ion-icon name="people-outline"></ion-icon></li>
+                    <li><ion-icon name="sync-circle-outline"></ion-icon></li>
+                    <li><ion-icon name="chatbubble-ellipses-outline"></ion-icon></li>
+                    <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+                </ul>
+            </div>
+            
+
+            <div class="search">
+                <div>
+                    <input type="text" class="ssd"   name="" id="" placeholder="Search here">
+                    <ion-icon name="search"  style="margin-top: 25px;"></ion-icon>
+                </div>
+                
+            </div>
+            <div class="btnn">
+                <button> All</button>
+                <button> Unread</button>
+                <button>Groups</button>
+            </div>
+            </div>
+        <div class="rscroll">
+            <div class="chtt chtt1">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1678010719/samples/food/spices.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k" >Fevicol&nbsp;$</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k" >12.00&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Hii Satya</span>
+            </div>  
+        </div>
+        <hr>
+
+
+        <div class="chtt">
+            <div class="rchat img">
+                <img src="./spider-removebg-preview.png" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">K&NonBreakingSpace;Satya..</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">12.00&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Okay</span>
+            </div>   
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1678011484/Screenshot_20220701-125554_GBWhatsApp_x7ahja.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Devil!....&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">Online</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Haa</span>
+            </div>   
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1678010731/cld-sample-2.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Rajesh&nbsp;&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">09.10&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Hello</span>
+            </div>   
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1678011519/IMG-20220115-WA0028-01_nukfiq.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Sai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">12.00&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Its me Sai</span>
+            </div>   
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1720273923/1592917312649_k4rqf9.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Frnd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">07.29&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">How are you?</span>
+            </div>   
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1720273923/Screenshot_20220501-130100_Photos_rpv7ce.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Buela&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">Online</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Oyy</span>
+            </div>    
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1720273928/20210731_183726_yvjwzx.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Mohan&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">01.00&nbsp;pm</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Enjoy!</span>
+            </div>    
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1720273923/59984219_424361851453391_2022446876451667968_o_o8f17e.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Nandhu&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">03.01&nbsp;pm</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Let's Meet</span>
+            </div>    
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1720273923/I_LOVE_MY_INDIA_20170401_210932_kb7gdw.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">E&nbsp;Mani&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">12.30&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">How r u?</span>
+            </div>   
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1720273946/IMG_20230828_183543_dbjkd9.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Mahesh&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">12.00&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Its me Mani</span>
+            </div>   
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1678011518/20211205_015755-01_ms4plu.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Satya&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">12.50&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Its me Satya</span>
+            </div>    
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1678011519/IMG-20200928-WA0044_rmtvgf.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Naveen&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">11.20&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">whats up!</span>
+            </div>   
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1678010732/cld-sample-5.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Manasa&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">10.20&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Its me Manasa</span>
+            </div>   
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1678010731/cld-sample-3.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Mounika&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">12.10&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Hare Ram!</span>
+            </div>  
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1678010732/cld-sample-4.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Deepthi&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">12.08&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">How Can i Forget.</span>
+            </div>  
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1678010730/cld-sample.jpg" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Prasad&nbsp;&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">07.47&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Hello Guru</span>
+            </div>    
+        </div>
+        <hr>
+        <div class="chtt ">
+            <div class="rchat img">
+                <img src="https://res.cloudinary.com/dj11hcigo/image/upload/v1678010721/samples/animals/kitten-playing.gif" alt=" user" class="img1">
+            </div>
+            <div>
+                <div class="newtime">
+                    <div>
+                        <h2 id="h2k">Kranthi&nbsp;&nbsp;&nbsp;</h2>
+                    </div>
+                    <div>
+                        <h5 id="h5k">12.01&nbsp;am</h5>
+                    </div>
+                </div>
+               
+                <span class="msg">Its me Satya</span>
+            </div>   
+        </div>
+        <hr>
+
+    </div>
+            
+        </div>
+        <div class="rightcont">
+            <div  class="header" style="z-index: 5;">
+                <div class="imagetext">
+                    <div   class="img">
+                        <img  src="./sai.png" alt=" user" class="img1">
+                    </div>
+                   
+                    
+                </div>
+                <div class="nm"><span class="nme">Satya......</span><br><span class="nme1">Last&nbsp;seen&nbsp;today&nbsp;at&nbsp;9:13&nbsp;pm</span></div>
+                
+                
+                
+                <ul class="icons"  >
+                    <li><ion-icon name="videocam-outline"></ion-icon></li>
+                    <li><ion-icon name="search-outline"></ion-icon></li>
+                    <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+                </ul>
+
+            </div>
+           <div class="rightchat">
+            <div class="msg1 ursmsg">
+                <p>Hey Satya, how's it going?<br><span>10:30</span></p>
+
+            </div><br><br>
+            <div class="msg1 mymsg">
+                <p>Hey Sai! I'm good, just been busy with work. How about you?<br><span>10:30</span></p>
+
+            </div><br><br><br><br><br><br><br>
+            <div class=" msg1 ursmsg">
+                <p>Same here. Work's been hectic. But I managed to catch that new movie last night.<br><span>10:31</span></p>
+
+            </div><br><br>
+            <div class="msg1 mymsg">
+                <p> Oh nice! Which one?<br><span>10:31</span></p>
+
+            </div><br><br><br><br><br><br>
+            <div class=" msg1 ursmsg">
+                <p>The new action one, "Kalki." Have you seen it?<br><span>10:31</span></p>
+
+            </div><br><br>
+            <div class="msg1 mymsg">
+                <p>Not yet, but it's on my list. How was it?<br><span>10:32</span></p>
+
+            </div><br><br><br><br><br><br><br><br>
+            <div class="ursmsg">
+                <p>It was pretty awesome! Lots of twists and the action scenes were intense. You should definitely check it out.<br><span>10:32</span></p>
+
+            </div><br><br><br><br>
+            <div class="mymsg" style="z-index: 2;">
+                <p>Sounds like my kind of movie. I’ll try to watch it this weekend.<br><span>10:32</span></p>
+
+            </div>
+            <br><br><br><br><br><br>
+            <div class="ursmsg">
+                <p> For sure! What have you been up to lately?<br><span>10:32</span></p>
+
+            </div><br><br><br><br><br><br>
+            <div class="mymsg" style="z-index: 2;">
+                <p>Just the usual, work and trying to stay active. I’ve been going for evening runs.<br><span>10:33</span></p>
+
+            </div>
+            <br><br><br><br><br><br><br><br><br><br>
+            <div class="ursmsg">
+                <p>That's great! I’ve been thinking about getting back into running. Any tips?<br><span>10:33</span></p>
+
+            </div><br><br><br><br><br><br>
+            <div class="mymsg" style="z-index: 2;">
+                <p>Just start slow and build up. And get some good running shoes, they make a big difference.<br><span>10:33</span></p>
+
+            </div>
+            <br><br><br><br><br><br>
+            <div class="ursmsg">
+                <p> Good advice. Maybe I'll join you sometime.<br><span>10:32</span></p>
+
+            </div><br><br><br><br><br><br>
+            <div class="mymsg" style="z-index: 2;">
+                <p>That’d be fun! We could make it a regular thing.<br><span>10:33</span></p>
+
+            </div>
+            <br><br><br><br><br><br><br><br><br><br>
+            <div class="ursmsg">
+                <p>Sounds like a plan. Let’s set it up for next week.<br><span>10:33</span></p>
+
+            </div><br><br><br><br><br><br>
+            <div class="mymsg" style="z-index: 2;">
+                <p> Perfect! Looking forward to it.<br><span>10:33</span></p>
+
+            </div>
+            
+
+            <div id="ffsearch" style="padding: 0px; margin: 0px;">
+                <div class="fsearch">
+                 <ul  class="icons"  >
+                     <li><ion-icon name="happy-outline"></ion-icon></li>
+                     <li><ion-icon name="add-outline"></ion-icon></li>
+                     <li><input id="txtet" style="border-radius: 25px; padding: 10px; font-size: 50%;"  type="text" column="1" row="2" placeholder="Type a message"></li>
+                     <li id="ing"  ><ion-icon  name="mic-outline"></ion-icon></li>
+                 </ul>
+             </div>
+         </div>
+           
+            <!-- <div class="fsearch">
+                <ul class="icons"  >
+                    <li><ion-icon name="happy-outline"></ion-icon></li>
+                    <li><input id="txtet" type="text"></li>
+                    <li><ion-icon name="mic-outline"></ion-icon></li>
+                </ul>
+            </div> -->
+           </div>
+         
+            
+            
+
+
+        </div>
+
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
