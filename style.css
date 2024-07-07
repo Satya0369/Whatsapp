@@ -342,8 +342,8 @@ input[type="text"]{
     position: fixed;
     bottom: 2%;
     z-index: 6;
-    min-width: 50%;
-    max-width: ;
+    min-width: 40%;
+     overflow-x: hidden;
   }
   #txtet{
     height: 100px;
