@@ -378,4 +378,10 @@ input[type="text"]{
     display: flex;
     justify-content: space-between;
   }
+  #iframe1{
+    display: none;
+  }
+  iframe::-webkit-scrollbar{
+    width: 2px;
+  }
   
